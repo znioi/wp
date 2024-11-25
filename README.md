@@ -1441,3 +1441,230 @@ function displayBooks() {
 
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+-
+-
+-
+
+# VIVA QUESTIONS
+
+---
+
+## **Viva Questions and Answers**
+
+### **Data Types**
+1. **Q: What are the primitive data types in JavaScript?**  
+   **A:** Primitive data types include `Number`, `String`, `Boolean`, `Null`, `Undefined`, `Symbol`, and `BigInt`.
+
+2. **Q: What is the difference between `null` and `undefined`?**  
+   **A:** `null` represents an intentional absence of a value, while `undefined` means a variable has been declared but not assigned a value.
+
+3. **Q: What is a complex data type?**  
+   **A:** Complex data types include objects such as arrays, functions, and objects themselves.
+
+4. **Q: How is an array different from an object in JavaScript?**  
+   **A:** An array is a special type of object designed to store indexed elements, whereas an object stores data in key-value pairs.
+
+5. **Q: What is the `typeof` operator?**  
+   **A:** The `typeof` operator returns the type of a given variable, such as `string`, `number`, or `object`.
+
+---
+
+### **Statements**
+6. **Q: What is a conditional statement in JavaScript?**  
+   **A:** Conditional statements like `if`, `else if`, `else`, and `switch` are used to perform different actions based on conditions.
+
+7. **Q: What is the syntax of an `if` statement?**  
+   **A:**  
+   ```javascript
+   if (condition) {
+       // code block to execute if condition is true
+   }
+   ```
+
+8. **Q: What is the difference between `switch` and `if-else`?**  
+   **A:** `switch` is used for equality comparisons between a variable and several values, while `if-else` can handle a broader range of conditions, including relational comparisons.
+
+9. **Q: What are looping statements in JavaScript?**  
+   **A:** Looping statements like `for`, `while`, and `do...while` are used to execute a block of code repeatedly as long as a specified condition is true.
+
+10. **Q: What is the difference between `while` and `do...while` loops?**  
+    **A:** A `while` loop checks the condition before executing the loop block, while a `do...while` loop executes the block at least once before checking the condition.
+
+---
+
+### **Keywords**
+11. **Q: What is the difference between `var`, `let`, and `const`?**  
+    **A:**  
+    - `var` has function or global scope.  
+    - `let` has block scope.  
+    - `const` is block-scoped and used for variables that cannot be reassigned.
+
+12. **Q: What is the use of the `this` keyword?**  
+    **A:** The `this` keyword refers to the object from which the current function was called.
+
+13. **Q: What is `try...catch` used for in JavaScript?**  
+    **A:** It is used for handling exceptions and errors gracefully during code execution.
+
+14. **Q: Can you redeclare a variable using `let`?**  
+    **A:** No, `let` does not allow redeclaration within the same scope.
+
+15. **Q: What happens if you declare a variable without any keyword?**  
+    **A:** The variable is implicitly assigned to the global scope, which is generally discouraged.
+
+---
+
+### **Operators**
+16. **Q: What are JavaScript arithmetic operators?**  
+    **A:** Arithmetic operators include `+`, `-`, `*`, `/`, `%`.
+
+17. **Q: What is the difference between `==` and `===`?**  
+    **A:** `==` checks for value equality after type coercion, while `===` checks for strict equality, including type.
+
+18. **Q: What does the `&&` operator do?**  
+    **A:** It returns true if both operands are true; otherwise, it returns false.
+
+19. **Q: What are assignment operators in JavaScript?**  
+    **A:** Assignment operators include `=`, `+=`, `-=`, `*=`, `/=`.
+
+20. **Q: What is the `%` operator?**  
+    **A:** The `%` operator returns the remainder of a division operation.
+
+---
+
+### **Practical Usage**
+21. **Q: How do you declare a variable in JavaScript?**  
+    **A:** Use `var`, `let`, or `const`. Example: `let x = 10;`
+
+22. **Q: How do you access object properties in JavaScript?**  
+    **A:** Use dot notation or bracket notation. Example: `objectName.propertyName` or `objectName['propertyName']`.
+
+23. **Q: Write a basic `if` statement to check if a number is positive.**  
+    **A:**  
+    ```javascript
+    if (number > 0) {
+        console.log("The number is positive");
+    }
+    ```
+
+24. **Q: How do you loop through an array using `for`?**  
+    **A:**  
+    ```javascript
+    let arr = [1, 2, 3];
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+    ```
+
+25. **Q: What is a function in JavaScript?**  
+    **A:** A reusable block of code designed to perform a specific task.
+
+---
+
+### **Debugging and Best Practices**
+26. **Q: How do you debug JavaScript code?**  
+    **A:** By using browser developer tools, `console.log()`, breakpoints, and debugging tools.
+
+27. **Q: What happens if you try to use a variable before declaring it?**  
+    **A:** You will get a `ReferenceError` if `let` or `const` is used, or `undefined` if `var` is used due to hoisting.
+
+28. **Q: Why is it better to use `let` and `const` over `var`?**  
+    **A:** Because `let` and `const` provide block scope and avoid unintended behavior due to hoisting.
+
+29. **Q: Can a `const` variable be changed?**  
+    **A:** No, you cannot reassign a `const` variable, but you can modify the contents if it’s an object or array.
+
+30. **Q: What does `NaN` mean?**  
+    **A:** `NaN` stands for "Not-a-Number" and indicates an invalid number result.
+
+---
+
+### **Advanced Questions**
+31. **Q: What is type coercion in JavaScript?**  
+    **A:** Automatic or implicit conversion of values from one data type to another, such as converting a string to a number.
+
+32. **Q: Can JavaScript handle asynchronous operations?**  
+    **A:** Yes, using promises, async/await, or callback functions.
+
+33. **Q: What are template literals?**  
+    **A:** Strings enclosed by backticks (`) that allow embedded expressions using `${}`.
+
+34. **Q: What are logical operators in JavaScript?**  
+    **A:** `&&`, `||`, `!`.
+
+35. **Q: How do you compare objects in JavaScript?**  
+    **A:** Use deep comparison techniques since objects are reference types.
+
+---
+
+### **Practical Scenarios**
+36. **Q: Write a `switch` statement to print the day of the week.**  
+    **A:**  
+    ```javascript
+    let day = 3;
+    switch (day) {
+        case 1: console.log("Monday"); break;
+        case 2: console.log("Tuesday"); break;
+        case 3: console.log("Wednesday"); break;
+        default: console.log("Invalid day");
+    }
+    ```
+
+37. **Q: How do you concatenate strings in JavaScript?**  
+    **A:** Using `+` or template literals. Example:  
+    ```javascript
+    let result = "Hello" + " World!";
+    ```
+
+38. **Q: How do you convert a string to a number?**  
+    **A:** Use `Number()`, `parseInt()`, or `parseFloat()`.
+
+39. **Q: Write a program to find the factorial of a number using a loop.**  
+    **A:**  
+    ```javascript
+    let num = 5, factorial = 1;
+    for (let i = 1; i <= num; i++) {
+        factorial *= i;
+    }
+    console.log(factorial);
+    ```
+
+40. **Q: How can you handle errors in JavaScript?**  
+    **A:** By using `try...catch`.
+
+---
+
+### **Miscellaneous**
+41. **Q: What is JavaScript?**  
+    **A:** JavaScript is a high-level, interpreted programming language used to create dynamic and interactive web content.
+
+42. **Q: Is JavaScript case-sensitive?**  
+    **A:** Yes, JavaScript is case-sensitive.
+
+43. **Q: What is the purpose of `break` in a loop?**  
+    **A:** To exit the loop immediately.
+
+44. **Q: Can you nest loops in JavaScript?**  
+    **A:** Yes, you can nest loops.
+
+
+
+-
+
+-
+
+-
+
+## EXP 02 
+
+
