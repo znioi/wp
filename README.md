@@ -180,7 +180,7 @@ Developed proficiency in using various HTML tags to organize and present a CV in
 
 --- 
 
-Here’s the polished version of the README for GitHub:
+
 
 ---
 
@@ -364,3 +364,169 @@ This experiment demonstrates proficiency in:
 - Implementing interactive and visually appealing components like flip cards.  
 
 ---
+
+
+
+---
+
+# Experiment 3: Simple Calculator Application Using JavaScript and HTML  
+
+---
+
+## Problem Statement  
+Create a webpage that demonstrates a **simple calculator application** using **JavaScript** and **HTML**. The calculator should support basic arithmetic operations such as addition, subtraction, multiplication, and division.
+
+---
+
+## Theory  
+
+Creating a simple calculator combines HTML and JavaScript to design and implement the structure and functionality of the application.  
+
+### **HTML Structure**  
+- **Input Field**: Displays numbers and mathematical expressions.  
+- **Buttons**: Represent numbers, operators, and functionalities such as clear, backspace, and evaluation.  
+- **Layout**: Organize buttons and the display for a user-friendly interface using `<div>` and `<table>` tags.  
+
+### **JavaScript Functionality**  
+1. **Event Handling**: Use event listeners to handle button clicks.  
+2. **Insert Operations**: Add user inputs (numbers or operators) to the display.  
+3. **Evaluation**: Compute expressions using the `eval()` function (with proper handling of the multiplication symbol).  
+4. **Clear Display**: Reset the display.  
+5. **Backspace Functionality**: Remove the last character from the input field.  
+
+### **Interaction Between HTML and JavaScript**  
+- **DOM Manipulation**: Retrieve and update HTML elements using JavaScript.  
+- **Display Update**: Ensure inputs and results are displayed dynamically based on user interactions.  
+
+---
+
+## Source Code  
+
+### HTML and JavaScript  
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Program in JavaScript</title>
+    <style>
+        /* Outer layout of the Calculator */
+        .formstyle {
+            width: 300px;
+            height: 400px;
+            margin: 20px auto;
+            border: 3px solid skyblue;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            background-color: grey;
+        }
+
+        /* Top horizontal bar */
+        h1 {
+            text-align: center;
+            padding: 10px;
+            background-color: skyblue;
+            color: white;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            margin: 2px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+        }
+
+        .textview {
+            width: 223px;
+            margin: 5px;
+            font-size: 25px;
+            padding: 5px;
+            background-color: lightgreen;
+        }
+    </style>
+    <script>
+        // Insert number or operator into the textview
+        function insert(num) {
+            document.form1.textview.value += num;
+        }
+
+        // Evaluate the expression
+        function equal() {
+            var exp = document.form1.textview.value;
+            if (exp) {
+                document.form1.textview.value = eval(exp.replace('x', '*'));
+            }
+        }
+
+        // Backspace function to remove the last character
+        function backspace() {
+            var exp = document.form1.textview.value;
+            document.form1.textview.value = exp.substring(0, exp.length - 1);
+        }
+
+        // Clear the textview
+        function clearText() {
+            document.form1.textview.value = '';
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculator Program in JavaScript</h1>
+    <div class="formstyle">
+        <form name="form1">
+            <input class="textview" name="textview" readonly>
+        </form>
+        <center>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><input class="btn" type="button" value="C" onclick="clearText()"></td>
+                        <td><input class="btn" type="button" value="B" onclick="backspace()"></td>
+                        <td><input class="btn" type="button" value="/" onclick="insert('/')"></td>
+                        <td><input class="btn" type="button" value="x" onclick="insert('x')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="btn" type="button" value="7" onclick="insert(7)"></td>
+                        <td><input class="btn" type="button" value="8" onclick="insert(8)"></td>
+                        <td><input class="btn" type="button" value="9" onclick="insert(9)"></td>
+                        <td><input class="btn" type="button" value="-" onclick="insert('-')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="btn" type="button" value="4" onclick="insert(4)"></td>
+                        <td><input class="btn" type="button" value="5" onclick="insert(5)"></td>
+                        <td><input class="btn" type="button" value="6" onclick="insert(6)"></td>
+                        <td><input class="btn" type="button" value="+" onclick="insert('+')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="btn" type="button" value="1" onclick="insert(1)"></td>
+                        <td><input class="btn" type="button" value="2" onclick="insert(2)"></td>
+                        <td><input class="btn" type="button" value="3" onclick="insert(3)"></td>
+                        <td><input class="btn" type="button" value="=" onclick="equal()"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><input class="btn" type="button" value="0" onclick="insert(0)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
+</body>
+</html>
+```
+
+---
+
+## Learning Outcomes  
+
+1. Understand how to structure a **calculator interface** using **HTML elements**.  
+2. Gain proficiency in implementing calculator functionality using **JavaScript**, including handling user inputs and performing mathematical operations.  
+3. Learn how **HTML and JavaScript** interact through **DOM manipulation** to create dynamic and interactive applications.  
+
+---
+
