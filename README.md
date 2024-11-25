@@ -1047,3 +1047,397 @@ Logs the "Window resized!" message in the console and updates the displayed view
 ---
 
 
+
+---
+
+# **Experiment No. 7**: Object Creation and Methods in JavaScript  
+
+---
+
+## **Problem Statement**  
+Create a JavaScript application to demonstrate object creation using **object literals**, **constructor functions**, and **ES6 classes**, and showcase methods added through **function assignments** and **prototypes**.
+
+---
+
+## **Theory**
+
+### **1. Object Creation**  
+Objects in JavaScript can be created using multiple techniques:  
+
+- **Object Literals**: Directly define objects with `{}` notation.  
+  ```javascript
+  let obj = { key: 'value' };
+  ```  
+
+- **Constructor Functions**: Define reusable object templates with `function` syntax.  
+  ```javascript
+  function ObjName(prop) {
+      this.prop = prop;
+  }
+  ```  
+
+- **ES6 Classes**: Modern syntax for creating classes and objects.  
+  ```javascript
+  class ObjName {
+      constructor(prop) {
+          this.prop = prop;
+      }
+  }
+  ```
+
+### **2. Adding Methods**  
+Methods can be added to objects using:  
+
+- **Function Assignment**: Directly assign functions as properties to objects.  
+  ```javascript
+  obj.methodName = function() { ... };
+  ```  
+
+- **Prototypes**: Share methods across all instances of an object.  
+  ```javascript
+  ObjName.prototype.methodName = function() { ... };
+  ```  
+
+---
+
+## **Source Code**
+
+### **HTML**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Creation and Methods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Object Creation and Methods</h1>
+
+    <button onclick="createBook()">Create Book</button>
+    <button onclick="createCar()">Create Car</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+---
+
+### **CSS**
+
+```css
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+```
+
+---
+
+### **JavaScript**
+
+```javascript
+// Object Creation with Constructor Function
+function Book(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+
+    // Method to display book information
+    this.displayInfo = function () {
+        alert(`Title: ${this.title}\nAuthor: ${this.author}\nPages: ${this.pages}`);
+    };
+}
+
+// Adding a prototype method to Book
+Book.prototype.getSummary = function () {
+    return `${this.title} by ${this.author} (${this.pages} pages)`;
+};
+
+// Creating a Book instance
+function createBook() {
+    let myBook = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 180);
+
+    // Calling methods
+    myBook.displayInfo();
+    console.log(myBook.getSummary());
+}
+
+// Object Creation with ES6 Class
+class Car {
+    constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Method inside the class
+    displayInfo() {
+        alert(`Make: ${this.make}\nModel: ${this.model}\nYear: ${this.year}`);
+    }
+
+    // Prototype method
+    startEngine() {
+        return `The engine of ${this.make} ${this.model} is starting...`;
+    }
+}
+
+// Creating a Car instance
+function createCar() {
+    let myCar = new Car('Toyota', 'Corolla', 2020);
+
+    // Calling methods
+    myCar.displayInfo();
+    console.log(myCar.startEngine());
+}
+
+// Object Creation with Literal
+let person = {
+    name: 'Alice',
+    age: 25,
+    greet: function () {
+        return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    }
+};
+
+console.log(person.greet());
+```
+
+---
+
+## **Output**  
+
+### **1. Book Creation and Methods**  
+- **Create Book Button**: Creates a `Book` object and displays its details using an alert and a console log.  
+
+### **2. Car Creation and Methods**  
+- **Create Car Button**: Creates a `Car` object and displays its details using an alert and a console log.  
+
+### **3. Literal Object**  
+- `person` object is logged to the console with a greeting message.  
+
+---
+
+## **Learning Outcomes**
+
+1. Gained expertise in creating objects using **object literals**, **constructor functions**, and **ES6 classes**.  
+2. Demonstrated the ability to add methods to objects using **function assignment** and **prototype methods**.  
+3. Learned to construct reusable object templates and define methods within those templates, highlighting key concepts of **object-oriented programming**.  
+4. Practiced practical JavaScript application development for object creation and method assignment.  
+
+---
+
+
+
+---
+
+# **Experiment No. 8**: Iteration with Loops  
+
+---
+
+## **Problem Statement**  
+Create a JavaScript application demonstrating the concept of iteration using loops (`for`, `while`, `do...while`). Include examples of array iteration and conditional iteration.
+
+---
+
+## **Theory**
+
+### **1. Loop Structures in JavaScript**  
+
+- **`for` Loop**: Executes a block of code a specified number of times.
+  ```javascript
+  for (let i = 0; i < 5; i++) {
+      console.log(i);
+  }
+  ```
+
+- **`while` Loop**: Executes a block of code as long as the condition evaluates to true.
+  ```javascript
+  let i = 0;
+  while (i < 5) {
+      console.log(i);
+      i++;
+  }
+  ```
+
+- **`do...while` Loop**: Executes a block of code at least once, then continues if the condition evaluates to true.
+  ```javascript
+  let i = 0;
+  do {
+      console.log(i);
+      i++;
+  } while (i < 5);
+  ```
+
+### **2. Applications of Iteration**  
+
+- **Repetitive Tasks**: Use loops to repeat code for calculations or logic.  
+- **Array Iteration**: Process or manipulate each element in an array.  
+- **Conditional Iteration**: Combine conditional statements with loops to filter data or control logic.
+
+---
+
+## **Source Code**
+
+### **HTML**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteration with Loops</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Iteration with Loops</h1>
+
+    <button onclick="displayBooks()">Display Books</button>
+
+    <div id="bookContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+---
+
+### **CSS**
+
+```css
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#bookContainer {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.bookInfo {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+```
+
+---
+
+### **JavaScript**
+
+```javascript
+// Object Constructor for Book
+function Book(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+
+    // Method to return formatted book information
+    this.displayInfo = function () {
+        return `<div class="bookInfo">
+                    <p><strong>Title:</strong> ${this.title}</p>
+                    <p><strong>Author:</strong> ${this.author}</p>
+                    <p><strong>Pages:</strong> ${this.pages}</p>
+                </div>`;
+    };
+}
+
+// Function to display books using different loop structures
+function displayBooks() {
+    // Creating an array of Book objects
+    let books = [
+        new Book('The Great Gatsby', 'F. Scott Fitzgerald', 180),
+        new Book('To Kill a Mockingbird', 'Harper Lee', 281),
+        new Book('1984', 'George Orwell', 328)
+    ];
+
+    // Accessing the bookContainer element in the HTML
+    let bookContainer = document.getElementById('bookContainer');
+    bookContainer.innerHTML = ''; // Clearing previous content
+
+    // 1. Using a for loop
+    bookContainer.innerHTML += "<h2>For Loop</h2>";
+    for (let i = 0; i < books.length; i++) {
+        bookContainer.innerHTML += books[i].displayInfo();
+    }
+
+    // 2. Using a for...of loop
+    bookContainer.innerHTML += "<h2>For...Of Loop</h2>";
+    for (const book of books) {
+        bookContainer.innerHTML += book.displayInfo();
+    }
+
+    // 3. Using a while loop
+    bookContainer.innerHTML += "<h2>While Loop</h2>";
+    let j = 0;
+    while (j < books.length) {
+        bookContainer.innerHTML += books[j].displayInfo();
+        j++;
+    }
+
+    // 4. Using a do...while loop
+    bookContainer.innerHTML += "<h2>Do...While Loop</h2>";
+    let k = 0;
+    do {
+        bookContainer.innerHTML += books[k].displayInfo();
+        k++;
+    } while (k < books.length);
+}
+```
+
+---
+
+## **Output**  
+
+### **Description of Output**  
+1. Clicking **"Display Books"** displays book information using four different loops (`for`, `for...of`, `while`, `do...while`).  
+2. Each book's details (title, author, and pages) are displayed in the browser dynamically.  
+
+### **Sample Display in Browser**  
+- **For Loop**: Displays books using a `for` loop.  
+- **For...Of Loop**: Displays books using a `for...of` loop.  
+- **While Loop**: Displays books using a `while` loop.  
+- **Do...While Loop**: Displays books using a `do...while` loop.  
+
+---
+
+## **Learning Outcomes**  
+
+1. Mastered **loop structures** (`for`, `while`, `do...while`) to automate repetitive tasks.  
+2. Understood **array iteration** and its practical applications in processing data.  
+3. Combined loops with **conditional logic** for enhanced control over iterations.  
+4. Gained insights into practical implementation of loops in **dynamic web applications**.
+
+---
+
