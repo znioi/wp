@@ -530,3 +530,354 @@ Creating a simple calculator combines HTML and JavaScript to design and implemen
 
 ---
 
+
+
+---
+
+# **Experiment No. 4**: CRUD Operations (To-Do/Grocery List)
+
+---
+
+## **Problem Statement**  
+Create a web page implementing **basic CRUD operations** (Create, Read, Update, Delete) using **JavaScript** and **HTML** to manage a **to-do/grocery list**.
+
+---
+
+## **Theory**
+
+CRUD operations form the backbone of most interactive web applications. Implementing them for a **to-do list** involves the following key aspects:  
+
+### **HTML Structure**  
+1. **Input Field**: Enables users to enter new items.  
+2. **List Display**: Dynamically shows the to-do items using `<ul>` and `<li>` elements.  
+3. **Action Buttons**: Provides buttons for editing and deleting each list item.  
+
+### **JavaScript Functionality**  
+1. **Create**: Add new items to the list.  
+2. **Read**: Display all existing items dynamically.  
+3. **Update**: Modify an existing item based on user input.  
+4. **Delete**: Remove an item from the list.  
+
+### **Interaction Between HTML and JavaScript**  
+- **DOM Manipulation**: Dynamically add, modify, or remove HTML elements based on user actions.  
+- **Event Handling**: Capture user actions like button clicks or keypress events to trigger JavaScript functions.  
+
+---
+
+## **Source Code**
+
+### **HTML**  
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <style>
+        /* CSS Styling */
+        @import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #2f363e;
+            font-family: 'Borel', cursive;
+        }
+
+        .box {
+            width: 450px;
+            height: 550px;
+            padding: 30px 50px;
+            border-radius: 30px;
+            background: #2f363e;
+            box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 
+                        inset 5px 5px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        #inputBx {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #4b535d;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+        }
+
+        .delete-btn, .edit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+        }
+
+        .edit-btn {
+            background: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>To-Do List</h2>
+        <input type="text" placeholder="Write here..." id="inputBx">
+        <ul class="list"></ul>
+    </div>
+    <script>
+        // JavaScript Logic
+        let list = document.querySelector(".list");
+        let inputBx = document.getElementById("inputBx");
+
+        // Add item to the list
+        inputBx.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" && inputBx.value.trim() !== "") {
+                addToList(inputBx.value.trim());
+                inputBx.value = "";
+            }
+        });
+
+        function addToList(text) {
+            let listItem = document.createElement("li");
+            let listText = document.createElement("span");
+            listText.textContent = text;
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("delete-btn");
+            deleteBtn.innerHTML = '<i class="fas fa-times"></i>';
+
+            let editBtn = document.createElement("button");
+            editBtn.classList.add("edit-btn");
+            editBtn.innerHTML = '<i class="fas fa-pencil-alt"></i>';
+
+            deleteBtn.addEventListener("click", () => list.removeChild(listItem));
+            editBtn.addEventListener("click", () => {
+                let newText = prompt("Edit item:", listText.textContent);
+                if (newText !== null && newText.trim() !== "") {
+                    listText.textContent = newText.trim();
+                }
+            });
+
+            listItem.appendChild(listText);
+            listItem.appendChild(editBtn);
+            listItem.appendChild(deleteBtn);
+            list.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
+```
+
+---
+
+## **Learning Outcomes**  
+
+1. **Understanding CRUD Operations**: Gained hands-on experience with implementing **create**, **read**, **update**, and **delete** functionalities in JavaScript.  
+2. **HTML and JavaScript Integration**: Learned to dynamically update the webpage using **DOM manipulation** and handle user interactions through **event listeners**.  
+3. **Improved Coding Skills**: Developed skills in JavaScript-based list management, user interface updates, and responsive interactions.
+
+---
+
+
+
+---
+
+# **Experiment No. 5**: JavaScript Basics – Data Types, Statements, Keywords, and Operators
+
+---
+
+## **Problem Statement**  
+Create a JavaScript application to explore and demonstrate the use of various **data types**, **statements**, **keywords**, and **operators**.
+
+---
+
+## **Theory**
+
+### **JavaScript Essentials**  
+
+1. **Data Types**  
+   - **Primitive Types**: Numbers, Strings, Booleans, `null`, `undefined`.  
+   - **Complex Types**: Objects (including Arrays, Functions).  
+
+2. **Statements**  
+   - **Conditional Statements**: `if`, `else if`, `else`, `switch`.  
+   - **Looping Statements**: `for`, `while`, `do...while`.  
+   - **Control Statements**: `break`, `continue`.  
+
+3. **Keywords**  
+   - **Variable Declaration**: `var`, `let`, `const`.  
+   - **Function Declaration**: `function`.  
+   - **Scope Keywords**: `this`, `global`.  
+   - **Error Handling**: `try`, `catch`, `throw`.  
+
+4. **Operators**  
+   - **Arithmetic Operators**: `+`, `-`, `*`, `/`, `%`.  
+   - **Assignment Operators**: `=`, `+=`, `-=`, etc.  
+   - **Comparison Operators**: `==`, `===`, `!=`, etc.  
+   - **Logical Operators**: `&&`, `||`, `!`.  
+   - **Bitwise Operators**: `&`, `|`, `^`, etc.  
+
+---
+
+## **Source Code**
+
+### **HTML**  
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>JavaScript Basics Demonstration</h1>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### **CSS**  
+
+```css
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 4px;
+    border-radius: 3px;
+    display: inline-block;
+}
+```
+
+### **JavaScript**  
+
+```javascript
+// Variables and Data Types
+let numberVar = 42;
+let stringVar = "Hello, JavaScript!";
+let booleanVar = true;
+let arrayVar = [10, 20, 30];
+let objectVar = { key: "value" };
+
+// Arithmetic Operators
+let addition = 5 + 10;
+let subtraction = 20 - 5;
+let multiplication = 4 * 5;
+let division = 20 / 4;
+let modulus = 25 % 4;
+
+// Conditional Statement
+let age = 18;
+if (age >= 18) {
+    document.write("<p><strong>Condition:</strong> You are eligible to vote.</p>");
+} else {
+    document.write("<p><strong>Condition:</strong> You are not eligible to vote.</p>");
+}
+
+// Looping Statement
+document.write("<h2>Looping Example</h2>");
+document.write("<p>Using <code>for</code> loop to iterate through an array:</p>");
+for (let i = 0; i < arrayVar.length; i++) {
+    document.write("<p>Element " + (i + 1) + ": " + arrayVar[i] + "</p>");
+}
+
+// Keywords and Error Handling
+try {
+    let result = "test" / 2;
+    if (isNaN(result)) throw "Invalid Division";
+} catch (error) {
+    document.write("<p><strong>Error Caught:</strong> " + error + "</p>");
+}
+
+// Displaying Results
+document.write("<h2>Variables and Data Types</h2>");
+document.write("<p><strong>Number:</strong> " + numberVar + "</p>");
+document.write("<p><strong>String:</strong> " + stringVar + "</p>");
+document.write("<p><strong>Boolean:</strong> " + booleanVar + "</p>");
+document.write("<p><strong>Array:</strong> " + arrayVar.join(", ") + "</p>");
+document.write("<p><strong>Object:</strong> " + JSON.stringify(objectVar) + "</p>");
+
+document.write("<h2>Operators in Action</h2>");
+document.write("<p><strong>Addition:</strong> " + addition + "</p>");
+document.write("<p><strong>Subtraction:</strong> " + subtraction + "</p>");
+document.write("<p><strong>Multiplication:</strong> " + multiplication + "</p>");
+document.write("<p><strong>Division:</strong> " + division + "</p>");
+document.write("<p><strong>Modulus:</strong> " + modulus + "</p>");
+```
+
+---
+
+## **Output**  
+
+### **1. Variables and Data Types**  
+- Number: `42`  
+- String: `"Hello, JavaScript!"`  
+- Boolean: `true`  
+- Array: `[10, 20, 30]`  
+- Object: `{"key": "value"}`  
+
+### **2. Operators in Action**  
+- Addition: `15`  
+- Subtraction: `15`  
+- Multiplication: `20`  
+- Division: `5`  
+- Modulus: `1`  
+
+### **3. Conditional and Looping Statements**  
+- Conditional Example: Displays eligibility to vote based on `age`.  
+- Loop Example: Iterates through an array and displays each element.  
+
+### **4. Error Handling**  
+Demonstrates the `try-catch` mechanism for managing runtime errors.  
+
+---
+
+## **Learning Outcomes**
+
+1. **Recognized and Utilized JavaScript Features**: Demonstrated proficiency in using various **data types**, **statements**, **keywords**, and **operators**.  
+2. **Applied Conditional and Looping Constructs**: Showcased the practical implementation of conditional checks and iterative logic.  
+3. **Error Handling Expertise**: Gained insights into handling runtime errors using `try-catch`.  
+4. **Improved Debugging Skills**: Learned to test and validate application logic dynamically.  
+
+---
+
+
