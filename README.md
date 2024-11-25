@@ -881,3 +881,169 @@ Demonstrates the `try-catch` mechanism for managing runtime errors.
 ---
 
 
+
+---
+
+# **Experiment No. 6**: Working with Window and Document Objects in JavaScript
+
+---
+
+## **Problem Statement**  
+Create a JavaScript application to explore and demonstrate the use of **Window Objects** and **Document Objects**, including their properties, methods, and events.
+
+---
+
+## **Theory**
+
+### **1. Window Object**  
+The `window` object represents the browser's window and provides methods, properties, and events to interact with the browser.
+
+- **Properties**:  
+  - `window.innerWidth`: Width of the viewport.  
+  - `window.innerHeight`: Height of the viewport.  
+
+- **Methods**:  
+  - `window.alert()`: Displays an alert box.  
+  - `window.open()`: Opens a new browser window.  
+  - `window.close()`: Closes the current browser window.  
+
+- **Events**:  
+  - `window.onload`: Executes when the page is fully loaded.  
+  - `window.onresize`: Executes when the window is resized.  
+
+### **2. Document Object**  
+The `document` object represents the HTML document loaded in the browser and allows manipulation of its structure and content.
+
+- **Accessing Elements**:  
+  - `document.getElementById()`: Access elements by their ID.  
+  - `document.querySelector()`: Access elements using CSS selectors.  
+
+- **Modifying Content**:  
+  - `innerHTML`: Updates or retrieves the HTML content inside an element.  
+  - `textContent`: Updates or retrieves text content inside an element.  
+
+- **Events**:  
+  - `document.addEventListener()`: Adds event listeners for user interactions.  
+
+---
+
+## **Source Code**
+
+### **HTML**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window and Document Objects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Window and Document Objects Demo</h1>
+
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
+    <button onclick="displayViewportSize()">Show Viewport Size</button>
+
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+---
+
+### **CSS**
+
+```css
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+```
+
+---
+
+### **JavaScript**
+
+```javascript
+// Function to show an alert using the Window Object
+function showAlert() {
+    window.alert('Hello, this is a window alert!');
+}
+
+// Function to change the background color using the Document Object
+function changeBackgroundColor() {
+    document.body.style.backgroundColor = getRandomColor();
+}
+
+// Helper function to generate a random color
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+// Function to display viewport size using Window Object
+function displayViewportSize() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const outputDiv = document.getElementById('output');
+    outputDiv.textContent = `Viewport Size: ${width}px x ${height}px`;
+}
+
+// Event Listener to handle window resizing
+window.onresize = function () {
+    console.log('Window resized!');
+    displayViewportSize(); // Update viewport size dynamically
+};
+```
+
+---
+
+## **Output**
+
+### **1. Buttons for User Interaction**  
+- **Show Alert**: Displays an alert box with a message.  
+- **Change Background Color**: Changes the background color of the page to a random color.  
+- **Show Viewport Size**: Displays the current browser viewport dimensions in pixels.
+
+### **2. Dynamic Resizing Feedback**  
+Logs the "Window resized!" message in the console and updates the displayed viewport size when the window is resized.
+
+---
+
+## **Learning Outcomes**
+
+1. **Window Object Interactions**: Gained knowledge of properties (`innerWidth`, `innerHeight`) and methods (`alert`, `onresize`) to interact with the browser.  
+2. **Document Object Manipulation**: Practiced accessing and modifying HTML elements using methods (`getElementById`, `innerHTML`) and responding to user actions.  
+3. **Event Handling**: Successfully used `window.onresize` and other event listeners to perform dynamic updates based on user interactions.  
+4. **Practical Implementation**: Developed a simple but effective JavaScript application that combines Window and Document Object functionalities.  
+
+---
+
+
