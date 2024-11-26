@@ -1668,3 +1668,1630 @@ function displayBooks() {
 ## EXP 02 
 
 
+---
+
+## **Viva Questions and Answers**
+
+### **Defining Functions**
+1. **Q: What is a function in JavaScript?**  
+   **A:** A function is a block of code designed to perform a specific task, which can be invoked or called multiple times.
+
+2. **Q: How do you define a function in JavaScript?**  
+   **A:** You can define a function using the `function` keyword followed by the function name, parameters, and the function body.  
+   Example:  
+   ```javascript
+   function greet(name) {
+       console.log("Hello, " + name);
+   }
+   ```
+
+3. **Q: What is a function expression?**  
+   **A:** A function expression defines a function inside an expression. It can be assigned to a variable.  
+   Example:  
+   ```javascript
+   const add = function(a, b) {
+       return a + b;
+   };
+   ```
+
+4. **Q: What are arrow functions in JavaScript?**  
+   **A:** Arrow functions provide a shorter syntax for writing functions and are defined using the `=>` syntax.  
+   Example:  
+   ```javascript
+   const multiply = (a, b) => a * b;
+   ```
+
+5. **Q: What is a named function?**  
+   **A:** A named function is a function that has a specific name assigned to it.  
+   Example:  
+   ```javascript
+   function subtract(a, b) {
+       return a - b;
+   }
+   ```
+
+---
+
+### **Calling Functions**
+6. **Q: How do you call a function in JavaScript?**  
+   **A:** A function is called by using its name followed by parentheses, with any required arguments inside the parentheses.  
+   Example:  
+   ```javascript
+   greet("Alice");
+   ```
+
+7. **Q: What are default parameters in JavaScript?**  
+   **A:** Default parameters allow you to set default values for function parameters if no value is passed.  
+   Example:  
+   ```javascript
+   function greet(name = "Guest") {
+       console.log("Hello, " + name);
+   }
+   ```
+
+8. **Q: What is a callback function?**  
+   **A:** A callback function is a function passed as an argument to another function to be executed later.  
+   Example:  
+   ```javascript
+   function fetchData(callback) {
+       console.log("Fetching data...");
+       callback();
+   }
+   fetchData(() => console.log("Data fetched!"));
+   ```
+
+9. **Q: What is recursion in JavaScript?**  
+   **A:** Recursion is a technique where a function calls itself to solve a problem.  
+   Example:  
+   ```javascript
+   function factorial(n) {
+       if (n === 0) return 1;
+       return n * factorial(n - 1);
+   }
+   ```
+
+10. **Q: What is the `arguments` object in JavaScript?**  
+    **A:** The `arguments` object is an array-like object that contains all the arguments passed to a function, even if they are not named parameters.
+
+---
+
+### **Arguments**
+11. **Q: Can you pass more arguments than defined parameters in a function?**  
+    **A:** Yes, you can pass more arguments than defined parameters, and they will be accessible through the `arguments` object.
+
+12. **Q: What is the spread operator used for in functions?**  
+    **A:** The spread operator (`...`) is used to pass an indefinite number of arguments to a function as an array.  
+    Example:  
+    ```javascript
+    function sum(...numbers) {
+        return numbers.reduce((a, b) => a + b);
+    }
+    ```
+
+13. **Q: What is the rest parameter in JavaScript?**  
+    **A:** The rest parameter (`...`) allows you to represent an indefinite number of arguments as an array.  
+    Example:  
+    ```javascript
+    function sum(...args) {
+        return args.reduce((acc, curr) => acc + curr, 0);
+    }
+    ```
+
+14. **Q: What is the purpose of the `return` statement in JavaScript?**  
+    **A:** The `return` statement is used to exit a function and optionally send a value back to the caller.
+
+15. **Q: What happens if a function does not have a return statement?**  
+    **A:** If a function does not explicitly return a value, it returns `undefined` by default.
+
+---
+
+### **Scope**
+16. **Q: What is the scope of a variable?**  
+    **A:** The scope of a variable defines where it is accessible in your code. It can either be global or local to a function or block.
+
+17. **Q: What is the difference between global and local scope?**  
+    **A:** A global variable is accessible anywhere in the code, while a local variable is only accessible within the function or block where it is declared.
+
+18. **Q: What is block-level scope?**  
+    **A:** Block-level scope refers to variables declared using `let` or `const`, which are confined to the block, statement, or expression in which they are defined.
+
+19. **Q: What is function scope?**  
+    **A:** Function scope refers to variables that are declared inside a function and can only be accessed within that function.
+
+20. **Q: What is lexical scoping?**  
+    **A:** Lexical scoping refers to the way functions are nested in JavaScript. Inner functions have access to the variables in their outer functions.
+
+---
+
+### **Function Expressions and Statements**
+21. **Q: What is a function expression?**  
+    **A:** A function expression defines a function inside an expression, typically assigned to a variable.
+
+22. **Q: How does a function expression differ from a function declaration?**  
+    **A:** A function expression is not hoisted, while a function declaration is hoisted and can be used before its definition in code.
+
+23. **Q: Can functions be passed as arguments to other functions?**  
+    **A:** Yes, functions can be passed as arguments, which is commonly known as a higher-order function.
+
+24. **Q: How do you return multiple values from a function in JavaScript?**  
+    **A:** You can return multiple values using an array, object, or destructuring assignment.
+
+25. **Q: Can you declare a function inside another function?**  
+    **A:** Yes, you can declare a function inside another function, and the inner function will have access to the variables of the outer function.
+
+---
+
+### **Advanced Function Concepts**
+26. **Q: What is a higher-order function?**  
+    **A:** A higher-order function is a function that takes one or more functions as arguments, returns a function as a result, or both.
+
+27. **Q: What is closure in JavaScript?**  
+    **A:** A closure is a function that retains access to its lexical environment, even after the function has finished executing.
+
+28. **Q: What are immediately invoked function expressions (IIFE)?**  
+    **A:** IIFE is a function that runs as soon as it is defined. It is often used to create a new scope.  
+    Example:  
+    ```javascript
+    (function() {
+        console.log("I am an IIFE!");
+    })();
+    ```
+
+29. **Q: What is a callback hell?**  
+    **A:** Callback hell refers to the situation when multiple nested callbacks make the code difficult to read and maintain. This is typically resolved using promises or `async/await`.
+
+30. **Q: What is memoization in JavaScript?**  
+    **A:** Memoization is an optimization technique where the results of expensive function calls are stored, and the cached result is returned when the same inputs occur again.
+
+---
+
+### **Practical Usage**
+31. **Q: Write a function that takes a number and returns whether it’s even or odd.**  
+    **A:**  
+    ```javascript
+    function checkEvenOdd(number) {
+        return number % 2 === 0 ? "Even" : "Odd";
+    }
+    ```
+
+32. **Q: How do you handle function overloading in JavaScript?**  
+    **A:** JavaScript does not support function overloading directly. Instead, you can check the number and type of arguments passed to the function using `arguments` or rest parameters.
+
+33. **Q: How would you write a function that accepts two numbers and returns their sum?**  
+    **A:**  
+    ```javascript
+    function add(a, b) {
+        return a + b;
+    }
+    ```
+
+34. **Q: How do you pass an object to a function in JavaScript?**  
+    **A:** You can pass an object by simply passing it as an argument.  
+    Example:  
+    ```javascript
+    const person = { name: "John", age: 30 };
+    function greetPerson(person) {
+        console.log("Hello, " + person.name);
+    }
+    greetPerson(person);
+    ```
+
+35. **Q: What is the difference between `call()`, `apply()`, and `bind()` in JavaScript?**  
+    **A:**  
+    - `call()` invokes the function immediately with the specified `this` value and arguments.  
+    - `apply()` is similar to `call()`, but the arguments are passed as an array.  
+    - `bind()` returns a new function with the specified `this`
+
+## exp 3
+
+
+---
+
+## **Viva Questions and Answers**
+
+### **Understanding JavaScript Events**
+1. **Q: What is an event in JavaScript?**  
+   **A:** An event is an action or occurrence detected by JavaScript, such as a mouse click, keypress, or page load.
+
+2. **Q: What are some common events in JavaScript?**  
+   **A:** Common events include `click`, `mouseover`, `mouseout`, `keydown`, `keyup`, `submit`, `load`, `resize`, and `focus`.
+
+3. **Q: What is event handling in JavaScript?**  
+   **A:** Event handling is the process of responding to user interactions with elements on a web page by executing a specified function.
+
+4. **Q: What is the difference between `onload` and `onclick` events?**  
+   **A:** `onload` occurs when the web page or an image is fully loaded, while `onclick` triggers when an element is clicked.
+
+5. **Q: What is the DOM in the context of event handling?**  
+   **A:** The DOM (Document Object Model) is a programming interface that allows JavaScript to interact with and manipulate HTML elements and handle their events.
+
+---
+
+### **Attaching Event Listeners**
+6. **Q: How do you attach an event listener to an element in JavaScript?**  
+   **A:** Use the `addEventListener()` method.  
+   Example:  
+   ```javascript
+   document.getElementById("button").addEventListener("click", handleClick);
+   ```
+
+7. **Q: What is the syntax of the `addEventListener` method?**  
+   **A:** `element.addEventListener(event, function, useCapture);`
+
+8. **Q: What is the difference between inline event handling and `addEventListener`?**  
+   **A:** Inline event handling adds the event directly in HTML (`onclick="functionName()"`), while `addEventListener` separates JavaScript from HTML and allows multiple listeners.
+
+9. **Q: How do you remove an event listener?**  
+   **A:** Use the `removeEventListener()` method.  
+   Example:  
+   ```javascript
+   element.removeEventListener("click", handleClick);
+   ```
+
+10. **Q: Can you attach multiple event listeners to the same element?**  
+    **A:** Yes, you can attach multiple event listeners to the same element, and they will execute in the order they were added.
+
+---
+
+### **Types of Events**
+11. **Q: What are mouse events in JavaScript?**  
+    **A:** Mouse events include `click`, `dblclick`, `mousedown`, `mouseup`, `mouseover`, `mousemove`, and `mouseout`.
+
+12. **Q: What are keyboard events?**  
+    **A:** Keyboard events include `keydown`, `keyup`, and `keypress`.
+
+13. **Q: What is the difference between `keydown` and `keypress`?**  
+    **A:** `keydown` triggers when a key is pressed, while `keypress` triggers when a printable character key is pressed.
+
+14. **Q: What is the `submit` event used for?**  
+    **A:** The `submit` event is triggered when a form is submitted.
+
+15. **Q: What is the difference between `focus` and `blur` events?**  
+    **A:** `focus` occurs when an element gains focus (e.g., a text field), and `blur` occurs when the focus is lost.
+
+---
+
+### **Event Object**
+16. **Q: What is the event object in JavaScript?**  
+    **A:** The event object contains information about the event, such as its type, target element, and additional details like mouse position or key pressed.
+
+17. **Q: How do you access the event object in an event handler?**  
+    **A:** The event object is passed as a parameter to the event handler function.  
+    Example:  
+    ```javascript
+    element.addEventListener("click", function(event) {
+        console.log(event.target);
+    });
+    ```
+
+18. **Q: What is the `event.target` property?**  
+    **A:** It refers to the element that triggered the event.
+
+19. **Q: What is the `event.type` property?**  
+    **A:** It returns the type of the event (e.g., `click`, `mouseover`).
+
+20. **Q: What is the purpose of `preventDefault()`?**  
+    **A:** It prevents the default behavior of an event, such as stopping a form submission or a link redirection.  
+    Example:  
+    ```javascript
+    event.preventDefault();
+    ```
+
+---
+
+### **Event Propagation**
+21. **Q: What is event propagation?**  
+    **A:** Event propagation is the process of event execution through the DOM, starting from the target element and moving outward or inward.
+
+22. **Q: What are the phases of event propagation?**  
+    **A:** The phases are capturing phase, target phase, and bubbling phase.
+
+23. **Q: What is the difference between event capturing and event bubbling?**  
+    **A:** In capturing, the event starts from the root and moves to the target. In bubbling, it starts from the target and propagates to the root.
+
+24. **Q: How do you stop event propagation?**  
+    **A:** Use the `stopPropagation()` method to prevent the event from propagating further.  
+    Example:  
+    ```javascript
+    event.stopPropagation();
+    ```
+
+25. **Q: Can you prevent both default behavior and propagation in an event?**  
+    **A:** Yes, by calling `event.preventDefault()` and `event.stopPropagation()` in the same event handler.
+
+---
+
+### **Event Delegation**
+26. **Q: What is event delegation?**  
+    **A:** Event delegation is a technique where a single event listener is added to a parent element to handle events for its child elements.
+
+27. **Q: Why is event delegation useful?**  
+    **A:** It improves performance by reducing the number of event listeners and ensures dynamic elements are also handled.
+
+28. **Q: How do you implement event delegation?**  
+    **A:** Attach a listener to the parent and use `event.target` to determine the clicked child.  
+    Example:  
+    ```javascript
+    document.getElementById("parent").addEventListener("click", function(event) {
+        if (event.target.tagName === "BUTTON") {
+            console.log("Button clicked!");
+        }
+    });
+    ```
+
+29. **Q: What is the disadvantage of event delegation?**  
+    **A:** It can lead to unwanted behavior if not properly filtered for specific child elements.
+
+30. **Q: Can event delegation handle dynamically created elements?**  
+    **A:** Yes, it is one of the primary advantages of event delegation.
+
+---
+
+### **Advanced Concepts**
+31. **Q: What is `once` in `addEventListener`?**  
+    **A:** The `once` option ensures the event listener is executed only once.  
+    Example:  
+    ```javascript
+    element.addEventListener("click", handleClick, { once: true });
+    ```
+
+32. **Q: What is throttling in JavaScript events?**  
+    **A:** Throttling limits the number of times a function executes over time, often used with scroll or resize events.
+
+33. **Q: What is debouncing in JavaScript events?**  
+    **A:** Debouncing delays the execution of a function until after a specified delay has passed since the last event.
+
+34. **Q: What are synthetic events in JavaScript?**  
+    **A:** Synthetic events are abstractions used in frameworks like React to normalize native DOM events across browsers.
+
+35. **Q: Can an element trigger multiple events simultaneously?**  
+    **A:** Yes, for example, a `click` event might trigger both a `mousedown` and `mouseup` event.
+
+---
+
+### **Practical Usage**
+36. **Q: Write an example of handling a `mouseover` event.**  
+    **A:**  
+    ```javascript
+    element.addEventListener("mouseover", () => {
+        console.log("Mouse is over the element!");
+    });
+    ```
+
+37. **Q: How do you handle multiple events with a single handler?**  
+    **A:** Use `switch` or conditional statements inside the handler to differentiate events.  
+    Example:  
+    ```javascript
+    element.addEventListener("click", handleEvent);
+    element.addEventListener("mouseover", handleEvent);
+
+    function handleEvent(event) {
+        switch (event.type) {
+            case "click":
+                console.log("Clicked!");
+                break;
+            case "mouseover":
+                console.log("Mouse Over!");
+                break;
+        }
+    }
+    ```
+
+38. **Q: How can you trigger an event programmatically?**  
+    **A:** Use the `dispatchEvent` method.  
+    Example:  
+    ```javascript
+    element.dispatchEvent(new Event("click"));
+    ```
+
+39. **Q: How do you log the key pressed during a `keydown` event?**  
+    **A:**  
+    ```javascript
+    document.addEventListener("keydown", (event) => {
+        console.log("Key pressed: " + event.key);
+    });
+    ```
+
+40. **Q: How do you bind an event handler dynamically?**  
+    **A:** By attaching it to an element programmatically using `addEventListener`.
+
+---
+
+## exp 4
+
+
+---
+
+## **Viva Questions and Answers**
+
+### **Basics of DOM**
+1. **Q: What is the DOM in JavaScript?**  
+   **A:** The DOM (Document Object Model) is a programming interface for HTML and XML documents that represents the structure of a webpage as a tree of objects.
+
+2. **Q: What are the main components of the DOM?**  
+   **A:** The DOM consists of three main components:  
+   - **Elements** (HTML elements as objects)  
+   - **Attributes** (properties of elements)  
+   - **Text** (content inside elements)
+
+3. **Q: What is the difference between the DOM and the BOM?**  
+   **A:** The DOM is used to access and manipulate HTML content, while the BOM (Browser Object Model) provides access to browser features like `window`, `navigator`, and `location`.
+
+4. **Q: How can you access the DOM in JavaScript?**  
+   **A:** You can access the DOM using methods like `document.getElementById()`, `document.querySelector()`, or properties like `document.body`.
+
+5. **Q: What is the root element of the DOM?**  
+   **A:** The `<html>` element is the root of the DOM tree.
+
+---
+
+### **Accessing DOM Elements**
+6. **Q: What is `document.getElementById()`?**  
+   **A:** It is a method that retrieves an element by its unique `id` attribute.  
+   Example:  
+   ```javascript
+   const element = document.getElementById("myId");
+   ```
+
+7. **Q: What is `document.getElementsByClassName()`?**  
+   **A:** It returns a live HTMLCollection of elements with a specific class name.
+
+8. **Q: How does `document.querySelector()` differ from `document.getElementById()`?**  
+   **A:** `querySelector()` returns the first element matching a CSS selector, while `getElementById()` retrieves an element by its `id`.
+
+9. **Q: What does `document.querySelectorAll()` do?**  
+   **A:** It returns a static NodeList of all elements matching a CSS selector.
+
+10. **Q: What is the difference between `childNodes` and `children`?**  
+    **A:**  
+    - `childNodes` includes all child nodes (elements, text, and comment nodes).  
+    - `children` only includes child elements (no text or comment nodes).
+
+---
+
+### **Modifying HTML Elements**
+11. **Q: How do you change the text content of an element?**  
+    **A:** Use the `textContent` or `innerHTML` property.  
+    Example:  
+    ```javascript
+    element.textContent = "Hello!";
+    ```
+
+12. **Q: What is the difference between `innerHTML` and `textContent`?**  
+    **A:**  
+    - `innerHTML` can insert HTML tags along with text.  
+    - `textContent` inserts plain text and ignores HTML tags.
+
+13. **Q: How do you add a new attribute to an element?**  
+    **A:** Use the `setAttribute()` method.  
+    Example:  
+    ```javascript
+    element.setAttribute("class", "newClass");
+    ```
+
+14. **Q: How do you remove an attribute from an element?**  
+    **A:** Use the `removeAttribute()` method.  
+    Example:  
+    ```javascript
+    element.removeAttribute("class");
+    ```
+
+15. **Q: How do you change the style of an element?**  
+    **A:** Use the `style` property.  
+    Example:  
+    ```javascript
+    element.style.color = "red";
+    ```
+
+---
+
+### **Adding and Removing Elements**
+16. **Q: How do you create a new DOM element?**  
+    **A:** Use the `document.createElement()` method.  
+    Example:  
+    ```javascript
+    const newDiv = document.createElement("div");
+    ```
+
+17. **Q: How do you add an element to the DOM?**  
+    **A:** Use methods like `appendChild()` or `append()`.  
+    Example:  
+    ```javascript
+    parentElement.appendChild(newDiv);
+    ```
+
+18. **Q: How do you remove an element from the DOM?**  
+    **A:** Use the `remove()` method or `removeChild()` on its parent.  
+    Example:  
+    ```javascript
+    element.remove();
+    ```
+
+19. **Q: What is the difference between `append()` and `appendChild()`?**  
+    **A:**  
+    - `append()` allows adding multiple nodes or strings and does not return a value.  
+    - `appendChild()` adds a single node and returns it.
+
+20. **Q: How do you replace an existing DOM element?**  
+    **A:** Use the `replaceChild()` method.  
+    Example:  
+    ```javascript
+    parentElement.replaceChild(newElement, oldElement);
+    ```
+
+---
+
+### **Event Handling in DOM**
+21. **Q: How do you attach an event handler to a DOM element?**  
+    **A:** Use the `addEventListener()` method.  
+    Example:  
+    ```javascript
+    element.addEventListener("click", handleClick);
+    ```
+
+22. **Q: How do you dynamically add a click event to a button?**  
+    **A:**  
+    ```javascript
+    const button = document.createElement("button");
+    button.textContent = "Click Me";
+    button.addEventListener("click", () => alert("Button clicked!"));
+    document.body.appendChild(button);
+    ```
+
+23. **Q: How do you handle a `mouseover` event?**  
+    **A:**  
+    ```javascript
+    element.addEventListener("mouseover", () => {
+        console.log("Mouse hovered over the element");
+    });
+    ```
+
+24. **Q: What is the difference between `addEventListener` and inline event handling?**  
+    **A:** `addEventListener` separates HTML and JavaScript, allows multiple listeners, and offers more control compared to inline event handling.
+
+25. **Q: How do you stop an event from propagating?**  
+    **A:** Use `event.stopPropagation()`.  
+
+---
+
+### **Traversing the DOM**
+26. **Q: What is the `parentNode` property in DOM?**  
+    **A:** It refers to the parent of the current node.
+
+27. **Q: How do you find all child elements of a node?**  
+    **A:** Use the `children` property.  
+    Example:  
+    ```javascript
+    const children = parentElement.children;
+    ```
+
+28. **Q: What is the `nextSibling` property?**  
+    **A:** It refers to the next sibling node in the DOM.
+
+29. **Q: How do you access the first child of an element?**  
+    **A:** Use the `firstChild` or `firstElementChild` property.
+
+30. **Q: What is the difference between `firstChild` and `firstElementChild`?**  
+    **A:**  
+    - `firstChild` includes any child node (e.g., text or comment).  
+    - `firstElementChild` only includes element nodes.
+
+---
+
+### **Modifying Classes**
+31. **Q: How do you add a class to an element?**  
+    **A:** Use the `classList.add()` method.  
+    Example:  
+    ```javascript
+    element.classList.add("newClass");
+    ```
+
+32. **Q: How do you remove a class from an element?**  
+    **A:** Use the `classList.remove()` method.  
+    Example:  
+    ```javascript
+    element.classList.remove("oldClass");
+    ```
+
+33. **Q: What is the `classList.toggle()` method?**  
+    **A:** It adds a class if it is not present and removes it if it is.  
+    Example:  
+    ```javascript
+    element.classList.toggle("active");
+    ```
+
+34. **Q: How do you check if an element has a specific class?**  
+    **A:** Use the `classList.contains()` method.  
+    Example:  
+    ```javascript
+    if (element.classList.contains("highlight")) {
+        console.log("Class is present");
+    }
+    ```
+
+35. **Q: Can you set multiple classes at once?**  
+    **A:** Yes, using `className` or multiple `classList.add()` calls.
+
+---
+
+### **Styling with CSS**
+36. **Q: How do you change the background color of an element?**  
+    **A:**  
+    ```javascript
+    element.style.backgroundColor = "blue";
+    ```
+
+37. **Q: How do you get the computed style of an element?**  
+    **A:** Use `getComputedStyle()`.  
+    Example:  
+    ```javascript
+    const style = window.getComputedStyle(element);
+    console.log(style.color);
+    ```
+
+38. **Q: How do you add CSS classes dynamically?**  
+    **A:** Use `classList.add()` to dynamically apply styles.
+
+39. **Q: What is the difference between inline styles and classes?**  
+    **A:** Inline styles are added directly to an element via the `style` attribute, while classes are defined in CSS and applied using `class` attributes.
+
+## exp 5
+### **Experiment 5: JavaScript DOM Manipulation**  
+
+
+
+---
+
+## **Viva Questions and Answers**
+
+### **Basics of DOM**
+1. **Q: What does DOM stand for?**  
+   **A:** DOM stands for Document Object Model. It represents the structure of an HTML or XML document as a tree of objects.
+
+2. **Q: Why is the DOM important in JavaScript?**  
+   **A:** The DOM allows JavaScript to interact with and manipulate the content, structure, and styles of a web document dynamically.
+
+3. **Q: What are DOM nodes?**  
+   **A:** DOM nodes are the elements, attributes, or text in the DOM tree, representing each part of the document.
+
+4. **Q: What are the different types of DOM nodes?**  
+   **A:** The main types include:  
+   - Element nodes  
+   - Attribute nodes  
+   - Text nodes  
+   - Comment nodes
+
+5. **Q: How do you access the DOM in JavaScript?**  
+   **A:** You can access the DOM using methods like `document.getElementById()`, `document.querySelector()`, or `document.getElementsByTagName()`.
+
+---
+
+### **DOM Manipulation Methods**
+6. **Q: How do you select an element by its ID?**  
+   **A:** Use the `document.getElementById()` method.  
+   Example:  
+   ```javascript
+   let element = document.getElementById('myId');
+   ```
+
+7. **Q: What is the purpose of `querySelector()`?**  
+   **A:** `querySelector()` selects the first element that matches a CSS selector.  
+   Example:  
+   ```javascript
+   let element = document.querySelector('.className');
+   ```
+
+8. **Q: How do you add a new element to the DOM?**  
+   **A:** Use `document.createElement()` to create an element and `appendChild()` or `append()` to add it to the DOM.  
+   Example:  
+   ```javascript
+   let newDiv = document.createElement('div');
+   document.body.appendChild(newDiv);
+   ```
+
+9. **Q: How do you remove an element from the DOM?**  
+   **A:** Use the `remove()` method or `removeChild()` on the parent node.  
+   Example:  
+   ```javascript
+   let element = document.getElementById('myId');
+   element.remove();
+   ```
+
+10. **Q: What is the difference between `innerHTML` and `textContent`?**  
+    **A:**  
+    - `innerHTML` can set or get the HTML content of an element.  
+    - `textContent` sets or gets only the text within an element, ignoring HTML tags.
+
+---
+
+### **DOM Properties**
+11. **Q: How do you change the style of an element using JavaScript?**  
+    **A:** Use the `style` property of the element.  
+    Example:  
+    ```javascript
+    let element = document.getElementById('myId');
+    element.style.color = 'red';
+    ```
+
+12. **Q: How do you get the value of an input field?**  
+    **A:** Use the `value` property of the input element.  
+    Example:  
+    ```javascript
+    let inputValue = document.getElementById('myInput').value;
+    ```
+
+13. **Q: What is the purpose of `classList` in DOM?**  
+    **A:** The `classList` property allows adding, removing, or toggling CSS classes on an element.  
+    Example:  
+    ```javascript
+    element.classList.add('newClass');
+    ```
+
+14. **Q: How do you set an attribute for an element?**  
+    **A:** Use the `setAttribute()` method.  
+    Example:  
+    ```javascript
+    element.setAttribute('src', 'image.jpg');
+    ```
+
+15. **Q: What is the `dataset` property?**  
+    **A:** The `dataset` property is used to access custom data attributes (`data-*`) on an element.  
+    Example:  
+    ```javascript
+    let dataValue = element.dataset.value;
+    ```
+
+---
+
+### **Events in DOM**
+16. **Q: What are DOM events?**  
+    **A:** DOM events are interactions or changes in the browser, like clicks, key presses, or mouse movements.
+
+17. **Q: How do you add an event listener to an element?**  
+    **A:** Use the `addEventListener()` method.  
+    Example:  
+    ```javascript
+    element.addEventListener('click', function() {
+        console.log('Element clicked!');
+    });
+    ```
+
+18. **Q: What is the difference between `onclick` and `addEventListener()`?**  
+    **A:**  
+    - `onclick` can only bind one event listener to an element.  
+    - `addEventListener()` allows multiple listeners for the same event.
+
+19. **Q: What is event bubbling?**  
+    **A:** Event bubbling is when an event propagates from the target element up to its ancestors.
+
+20. **Q: How do you stop event bubbling?**  
+    **A:** Use the `stopPropagation()` method.  
+    Example:  
+    ```javascript
+    event.stopPropagation();
+    ```
+
+---
+
+### **Traversing the DOM**
+21. **Q: How do you access the parent of an element?**  
+    **A:** Use the `parentNode` or `parentElement` property.
+
+22. **Q: What is the `children` property in DOM?**  
+    **A:** The `children` property returns a live HTMLCollection of all child elements of an element.
+
+23. **Q: How do you find the first child of an element?**  
+    **A:** Use the `firstChild` or `firstElementChild` property.  
+    Example:  
+    ```javascript
+    let firstChild = element.firstElementChild;
+    ```
+
+24. **Q: How do you find the next sibling of an element?**  
+    **A:** Use the `nextSibling` or `nextElementSibling` property.
+
+25. **Q: How do you loop through all child elements of an element?**  
+    **A:** Use a `for` loop with the `children` property or `forEach()` with `childNodes`.  
+    Example:  
+    ```javascript
+    Array.from(element.children).forEach(child => console.log(child));
+    ```
+
+---
+
+### **Advanced DOM**
+26. **Q: What is the difference between `NodeList` and `HTMLCollection`?**  
+    **A:**  
+    - `NodeList` is a static or live collection of nodes.  
+    - `HTMLCollection` is always live and only contains element nodes.
+
+27. **Q: How do you clone an element in the DOM?**  
+    **A:** Use the `cloneNode()` method.  
+    Example:  
+    ```javascript
+    let clone = element.cloneNode(true);
+    ```
+
+28. **Q: What is a shadow DOM?**  
+    **A:** Shadow DOM is a part of the web component specification, allowing encapsulation of styles and DOM structure.
+
+29. **Q: How do you defer the execution of a script?**  
+    **A:** Use the `defer` attribute in the `<script>` tag.
+
+30. **Q: What is a virtual DOM?**  
+    **A:** A virtual DOM is an in-memory representation of the real DOM used in libraries like React for efficient updates.
+
+---
+
+### **Debugging and Errors**
+31. **Q: How do you check if an element exists in the DOM?**  
+    **A:** Use a conditional check with `document.querySelector()` or `document.getElementById()`.  
+    Example:  
+    ```javascript
+    if (document.getElementById('myId')) {
+        console.log('Element exists');
+    }
+    ```
+
+32. **Q: What happens if you try to access an element that does not exist?**  
+    **A:** It returns `null`.
+
+33. **Q: What is a DOMException?**  
+    **A:** A DOMException is an error that occurs during DOM-related operations, like `NotFoundError` or `SyntaxError`.
+
+34. **Q: How can you debug DOM issues?**  
+    **A:** Use browser developer tools, console logs, or breakpoints in the DOM inspector.
+
+35. **Q: What is the `DOMContentLoaded` event?**  
+    **A:** It fires when the HTML document is completely loaded and parsed, without waiting for stylesheets, images, and subframes.
+
+---
+
+### **Practical Examples**
+36. **Q: Write JavaScript to change the background color of a `<div>` with ID `box`.**  
+    **A:**  
+    ```javascript
+    document.getElementById('box').style.backgroundColor = 'blue';
+    ```
+
+37. **Q: How do you find all elements with a specific class name?**  
+    **A:** Use `document.getElementsByClassName()` or `document.querySelectorAll()`.  
+    Example:  
+    ```javascript
+    let elements = document.getElementsByClassName('myClass');
+    ```
+
+38. **Q: How do you toggle a class on an element?**  
+    **A:** Use the `classList.toggle()` method.  
+    Example:  
+    ```javascript
+    element.classList.toggle('hidden');
+    ```
+
+## exp 6
+
+
+
+---
+
+## **Viva Questions and Answers**
+
+### **Basics of Form Validation**
+1. **Q: What is form validation in JavaScript?**  
+   **A:** Form validation ensures the data entered into a form meets specified criteria before being submitted to the server.
+
+2. **Q: What are the types of form validation?**  
+   **A:**  
+   - **Client-side validation:** Done using JavaScript or HTML5.  
+   - **Server-side validation:** Performed on the server.
+
+3. **Q: Why is client-side validation important?**  
+   **A:** It improves user experience by providing immediate feedback and reduces server load.
+
+4. **Q: Why do we still need server-side validation?**  
+   **A:** Client-side validation can be bypassed, so server-side validation ensures security and data integrity.
+
+5. **Q: Can HTML5 handle validation without JavaScript?**  
+   **A:** Yes, HTML5 provides built-in validation using attributes like `required`, `pattern`, `min`, `max`, and `type`.
+
+---
+
+### **Common Validation Techniques**
+6. **Q: How do you check if a field is empty in JavaScript?**  
+   **A:** Use the `.value` property to check the input field's value.  
+   Example:  
+   ```javascript
+   if (input.value === "") {
+       alert("Field cannot be empty");
+   }
+   ```
+
+7. **Q: How do you validate an email address?**  
+   **A:** Use a regular expression.  
+   Example:  
+   ```javascript
+   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+   if (!emailPattern.test(email.value)) {
+       alert("Invalid email address");
+   }
+   ```
+
+8. **Q: What is the `required` attribute in HTML5?**  
+   **A:** It ensures the field must be filled before form submission.
+
+9. **Q: How do you validate if a password meets specific criteria?**  
+   **A:** Use a combination of conditions or regular expressions.  
+   Example:  
+   ```javascript
+   if (password.length < 8 || !/\d/.test(password)) {
+       alert("Password must be at least 8 characters and contain a number");
+   }
+   ```
+
+10. **Q: How do you validate if two fields (e.g., passwords) match?**  
+    **A:** Compare their values.  
+    Example:  
+    ```javascript
+    if (password.value !== confirmPassword.value) {
+        alert("Passwords do not match");
+    }
+    ```
+
+---
+
+### **Event Handling in Forms**
+11. **Q: What is the `onsubmit` event?**  
+    **A:** It triggers when a form is submitted.
+
+12. **Q: How do you prevent a form from submitting when validation fails?**  
+    **A:** Use `event.preventDefault()`.  
+    Example:  
+    ```javascript
+    form.addEventListener("submit", (event) => {
+        if (!isValid) {
+            event.preventDefault();
+            alert("Form is invalid");
+        }
+    });
+    ```
+
+13. **Q: What is the `oninput` event?**  
+    **A:** It triggers every time the value of an input field changes.
+
+14. **Q: How do you handle form validation when the user leaves a field?**  
+    **A:** Use the `onblur` event.  
+    Example:  
+    ```javascript
+    input.addEventListener("blur", () => {
+        if (input.value === "") {
+            alert("Field is required");
+        }
+    });
+    ```
+
+15. **Q: What is the `change` event in form elements?**  
+    **A:** It triggers when the value of a form element changes and loses focus.
+
+---
+
+### **Regular Expressions in Validation**
+16. **Q: What is a regular expression?**  
+    **A:** A pattern used to match strings or validate input.
+
+17. **Q: How do you validate a phone number?**  
+    **A:** Use a regular expression.  
+    Example:  
+    ```javascript
+    const phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(phone.value)) {
+        alert("Invalid phone number");
+    }
+    ```
+
+18. **Q: How do you validate input length using JavaScript?**  
+    **A:** Use the `.length` property.  
+    Example:  
+    ```javascript
+    if (input.value.length < 5) {
+        alert("Input must be at least 5 characters long");
+    }
+    ```
+
+19. **Q: What is the purpose of the `pattern` attribute in HTML5?**  
+    **A:** It defines a regular expression for validating the value of an input field.
+
+20. **Q: How do you use the `pattern` attribute for validation?**  
+    **A:**  
+    ```html
+    <input type="text" pattern="[A-Za-z]{3,}" title="At least 3 letters" required>
+    ```
+
+---
+
+### **Handling Errors and Feedback**
+21. **Q: How do you display error messages in form validation?**  
+    **A:** Use `alert()`, insert messages in the DOM, or display them near the field with CSS.  
+    Example:  
+    ```javascript
+    errorElement.textContent = "Invalid input";
+    ```
+
+22. **Q: How can you highlight invalid fields?**  
+    **A:** Use CSS to style the field dynamically.  
+    Example:  
+    ```javascript
+    if (!isValid) {
+        input.style.borderColor = "red";
+    }
+    ```
+
+23. **Q: What is the `setCustomValidity()` method?**  
+    **A:** It sets a custom error message for validation.  
+    Example:  
+    ```javascript
+    input.setCustomValidity("This field is required");
+    ```
+
+24. **Q: How do you reset a form?**  
+    **A:** Use the `reset()` method.  
+    Example:  
+    ```javascript
+    form.reset();
+    ```
+
+25. **Q: How do you check if a form is valid in JavaScript?**  
+    **A:** Use the `checkValidity()` method.  
+    Example:  
+    ```javascript
+    if (!form.checkValidity()) {
+        alert("Form is invalid");
+    }
+    ```
+
+---
+
+### **Advanced Validation**
+26. **Q: How do you validate a dropdown selection?**  
+    **A:** Check the selected value.  
+    Example:  
+    ```javascript
+    if (dropdown.value === "") {
+        alert("Please select an option");
+    }
+    ```
+
+27. **Q: How do you validate a checkbox group?**  
+    **A:** Ensure at least one checkbox is checked.  
+    Example:  
+    ```javascript
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+    const isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+    if (!isChecked) {
+        alert("Please select at least one option");
+    }
+    ```
+
+28. **Q: How do you validate a radio button group?**  
+    **A:** Check if one radio button is selected.  
+    Example:  
+    ```javascript
+    const radios = document.querySelectorAll("input[type='radio']");
+    const isSelected = Array.from(radios).some(radio => radio.checked);
+    ```
+
+29. **Q: How do you handle validation for dynamically added fields?**  
+    **A:** Add event listeners to new fields or use delegation.  
+    Example:  
+    ```javascript
+    form.addEventListener("input", (event) => {
+        validateField(event.target);
+    });
+    ```
+
+30. **Q: What is live validation?**  
+    **A:** Validation that occurs as the user types or interacts with the form.
+
+---
+
+### **HTML5 Form Validation Features**
+31. **Q: What does the `novalidate` attribute do in a form?**  
+    **A:** It disables built-in HTML5 validation.
+
+32. **Q: What is the `min` attribute used for in number inputs?**  
+    **A:** It sets the minimum acceptable value.
+
+33. **Q: What is the `maxlength` attribute?**  
+    **A:** It specifies the maximum number of characters allowed in an input.
+
+34. **Q: How do you use the `step` attribute?**  
+    **A:** It defines the increment for numeric input.  
+    Example:  
+    ```html
+    <input type="number" min="0" step="5">
+    ```
+
+35. **Q: What is the `title` attribute in form inputs?**  
+    **A:** It provides a tooltip with additional instructions.
+
+---
+
+### **Practical Examples**
+36. **Q: Write a script to validate a form with name, email, and password fields.**  
+    **A:**  
+    ```javascript
+    form.addEventListener("submit", (event) => {
+        if (name.value === "" || !emailPattern.test(email.value) || password.length < 8) {
+            event.preventDefault();
+            alert("Form is invalid");
+        }
+    });
+    ```
+
+37. **Q: How do you validate a date field?**  
+    **A:** Compare the input value with `new Date()`.  
+
+## exp 7
+
+### **Experiment 7: JavaScript Events - Event Handling, Types of Events, and Event Propagation**  
+
+
+
+---
+
+## **Viva Questions and Answers**
+
+### **Basics of Events**
+1. **Q: What is an event in JavaScript?**  
+   **A:** An event is an interaction or occurrence, such as a mouse click, keypress, or form submission, that can be handled using JavaScript.
+
+2. **Q: How do you handle events in JavaScript?**  
+   **A:** Events can be handled using inline HTML attributes, DOM properties (`onclick`), or `addEventListener()`.
+
+3. **Q: What is the `addEventListener()` method?**  
+   **A:** `addEventListener()` attaches an event handler to an element without overwriting existing event handlers.
+
+4. **Q: What is the syntax for `addEventListener()`?**  
+   **A:**  
+   ```javascript
+   element.addEventListener(event, handler, useCapture);
+   ```
+
+5. **Q: What are the advantages of `addEventListener()` over `onclick`?**  
+   **A:**  
+   - It allows multiple event handlers for the same event.  
+   - It supports capturing and bubbling phases.  
+   - It provides better separation of HTML and JavaScript.
+
+---
+
+### **Types of Events**
+6. **Q: What are the different types of events in JavaScript?**  
+   **A:**  
+   - Mouse Events (`click`, `dblclick`, `mousemove`, `mousedown`, `mouseup`)  
+   - Keyboard Events (`keydown`, `keypress`, `keyup`)  
+   - Form Events (`submit`, `focus`, `blur`, `change`)  
+   - Window Events (`load`, `resize`, `scroll`, `unload`)  
+   - Touch Events (`touchstart`, `touchend`, `touchmove`)
+
+7. **Q: What is a mouse event?**  
+   **A:** Mouse events are triggered by interactions with the mouse, such as clicks or movements.
+
+8. **Q: How do you detect a key press in JavaScript?**  
+   **A:** Use `keydown`, `keyup`, or `keypress` events on an element.  
+   Example:  
+   ```javascript
+   document.addEventListener('keydown', (e) => {
+       console.log(e.key);
+   });
+   ```
+
+9. **Q: What is a form event?**  
+   **A:** A form event occurs when users interact with a form element, such as submitting or focusing.
+
+10. **Q: What is the `load` event?**  
+    **A:** The `load` event occurs when the entire page, including resources like images and scripts, is fully loaded.
+
+---
+
+### **Event Properties**
+11. **Q: What is the `event` object in JavaScript?**  
+    **A:** The `event` object contains information about the event, such as its type, target element, and more.
+
+12. **Q: How do you get the target element of an event?**  
+    **A:** Use the `target` property of the `event` object.  
+    Example:  
+    ```javascript
+    element.addEventListener('click', (e) => {
+        console.log(e.target);
+    });
+    ```
+
+13. **Q: What is the difference between `target` and `currentTarget`?**  
+    **A:**  
+    - `target`: Refers to the actual element that triggered the event.  
+    - `currentTarget`: Refers to the element to which the event listener is attached.
+
+14. **Q: What is the `type` property of an event?**  
+    **A:** The `type` property returns the type of the triggered event (e.g., `click`, `keydown`).
+
+15. **Q: How do you prevent the default behavior of an event?**  
+    **A:** Use the `preventDefault()` method.  
+    Example:  
+    ```javascript
+    element.addEventListener('submit', (e) => {
+        e.preventDefault();
+    });
+    ```
+
+---
+
+### **Event Propagation**
+16. **Q: What is event propagation?**  
+    **A:** Event propagation is the flow of events through the DOM hierarchy, consisting of three phases: capturing, target, and bubbling.
+
+17. **Q: What is event bubbling?**  
+    **A:** Event bubbling occurs when an event starts at the target element and propagates up to its ancestors.
+
+18. **Q: What is event capturing?**  
+    **A:** Event capturing occurs when an event propagates from the root element down to the target element.
+
+19. **Q: How do you stop event propagation?**  
+    **A:** Use the `stopPropagation()` method.  
+    Example:  
+    ```javascript
+    element.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+    ```
+
+20. **Q: What is the difference between `stopPropagation()` and `stopImmediatePropagation()`?**  
+    **A:**  
+    - `stopPropagation()`: Prevents the event from reaching parent elements.  
+    - `stopImmediatePropagation()`: Prevents the event from reaching other handlers on the same element and its parent elements.
+
+---
+
+### **Event Delegation**
+21. **Q: What is event delegation?**  
+    **A:** Event delegation is a technique where a single event listener is attached to a parent element to handle events on its child elements.
+
+22. **Q: Why use event delegation?**  
+    **A:**  
+    - Reduces the number of event listeners in the DOM.  
+    - Handles dynamically added elements.
+
+23. **Q: How do you implement event delegation?**  
+    **A:** Use the `target` property of the event object to identify the clicked element.  
+    Example:  
+    ```javascript
+    document.getElementById('parent').addEventListener('click', (e) => {
+        if (e.target.className === 'child') {
+            console.log('Child clicked!');
+        }
+    });
+    ```
+
+24. **Q: What are the limitations of event delegation?**  
+    **A:**  
+    - May become complex for deeply nested elements.  
+    - Does not work for certain events like `blur` and `focus`.
+
+25. **Q: What is the difference between inline event handlers and delegated event handlers?**  
+    **A:** Inline handlers are directly assigned in HTML, while delegated handlers use a parent element to listen for events.
+
+---
+
+### **Advanced Concepts**
+26. **Q: What is the difference between `mouseenter` and `mouseover`?**  
+    **A:**  
+    - `mouseenter`: Does not bubble; triggered when the mouse enters the target element.  
+    - `mouseover`: Bubbles; triggered when the mouse enters the target or its child elements.
+
+27. **Q: What is the `once` option in `addEventListener()`?**  
+    **A:** The `once` option ensures that the event listener is executed only once.  
+    Example:  
+    ```javascript
+    element.addEventListener('click', handler, { once: true });
+    ```
+
+28. **Q: How do you remove an event listener?**  
+    **A:** Use the `removeEventListener()` method.  
+    Example:  
+    ```javascript
+    element.removeEventListener('click', handler);
+    ```
+
+29. **Q: What is the `passive` option in event listeners?**  
+    **A:** The `passive` option improves performance by letting the browser know that the event listener will not call `preventDefault()`.
+
+30. **Q: What is throttling in event handling?**  
+    **A:** Throttling ensures that an event handler is executed at most once in a specified time interval.
+
+---
+
+### **Practical Examples**
+31. **Q: How do you change the text of a button when clicked?**  
+    **A:**  
+    ```javascript
+    document.getElementById('button').addEventListener('click', (e) => {
+        e.target.textContent = 'Clicked!';
+    });
+    ```
+
+32. **Q: How do you detect a double-click event?**  
+    **A:** Use the `dblclick` event.  
+    Example:  
+    ```javascript
+    element.addEventListener('dblclick', () => console.log('Double clicked!'));
+    ```
+
+33. **Q: How do you handle a keyboard event for the Enter key?**  
+    **A:**  
+    ```javascript
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            console.log('Enter key pressed');
+        }
+    });
+    ```
+
+34. **Q: How do you prevent a right-click context menu?**  
+    **A:**  
+    ```javascript
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+    ```
+
+35. **Q: How do you handle a form submission event?**  
+    **A:**  
+    ```javascript
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('Form submitted');
+    });
+    ```
+
+---
+
+
+
+---
+## exp 8
+## **Viva Questions and Answers**
+
+---
+
+### **Introduction to AJAX**
+1. **Q: What is AJAX?**  
+   **A:** AJAX (Asynchronous JavaScript and XML) is a technique for creating dynamic, fast, and interactive web applications by sending and receiving data asynchronously without reloading the webpage.
+
+2. **Q: What does AJAX stand for?**  
+   **A:** Asynchronous JavaScript and XML.
+
+3. **Q: Why is AJAX used?**  
+   **A:** To improve user experience by allowing data to be updated dynamically without a full page reload.
+
+4. **Q: Can AJAX only work with XML?**  
+   **A:** No, AJAX can handle various data formats, including JSON, XML, HTML, and plain text.
+
+5. **Q: What are the core technologies used in AJAX?**  
+   **A:**  
+   - HTML and CSS for presentation.  
+   - JavaScript for interactivity.  
+   - XML/JSON for data exchange.  
+   - XMLHttpRequest or Fetch API for server communication.
+
+---
+
+### **XMLHttpRequest Basics**
+6. **Q: What is the `XMLHttpRequest` object?**  
+   **A:** It is a JavaScript object used to send and receive HTTP requests and responses asynchronously.
+
+7. **Q: How do you create an `XMLHttpRequest` object?**  
+   **A:**  
+   ```javascript
+   const xhr = new XMLHttpRequest();
+   ```
+
+8. **Q: What are the main methods of `XMLHttpRequest`?**  
+   **A:**  
+   - `open(method, URL, async)`  
+   - `send(data)`  
+   - `setRequestHeader(header, value)`
+
+9. **Q: What is the difference between `GET` and `POST` in AJAX?**  
+   **A:**  
+   - `GET` requests data from the server (used for fetching).  
+   - `POST` sends data to the server (used for updates or uploads).
+
+10. **Q: How do you send a GET request using `XMLHttpRequest`?**  
+    **A:**  
+    ```javascript
+    xhr.open("GET", "url", true);
+    xhr.send();
+    ```
+
+---
+
+### **Working with Fetch API**
+11. **Q: What is the Fetch API?**  
+    **A:** The Fetch API provides a modern, promise-based way to make HTTP requests in JavaScript.
+
+12. **Q: How do you fetch data using the Fetch API?**  
+    **A:**  
+    ```javascript
+    fetch("url")
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
+    ```
+
+13. **Q: What is the difference between `XMLHttpRequest` and Fetch API?**  
+    **A:**  
+    - Fetch API uses Promises, while `XMLHttpRequest` relies on event-based callbacks.  
+    - Fetch API is simpler and more readable.
+
+14. **Q: How do you handle errors in the Fetch API?**  
+    **A:** Use `.catch()` to handle network errors or check `response.ok` for HTTP errors.
+
+15. **Q: How can you send a POST request using Fetch?**  
+    **A:**  
+    ```javascript
+    fetch("url", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+    ```
+
+---
+
+### **AJAX Events**
+16. **Q: What are the ready states in `XMLHttpRequest`?**  
+    **A:**  
+    - `0` (UNSENT): Request not initialized.  
+    - `1` (OPENED): Connection established.  
+    - `2` (HEADERS_RECEIVED): Request received.  
+    - `3` (LOADING): Processing request.  
+    - `4` (DONE): Request finished, and response is ready.
+
+17. **Q: What is the `onreadystatechange` event?**  
+    **A:** An event triggered whenever the ready state changes.
+
+18. **Q: How do you handle asynchronous responses?**  
+    **A:** Use the `onreadystatechange` or a callback function to process the server's response.
+
+19. **Q: What is the `onload` event in AJAX?**  
+    **A:** It triggers when the request is completed successfully.
+
+20. **Q: How do you monitor AJAX progress?**  
+    **A:** Use the `onprogress` event to track the progress of a request.
+
+---
+
+### **JSON and AJAX**
+21. **Q: What is JSON?**  
+    **A:** JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy to read and write for humans and machines.
+
+22. **Q: How do you parse JSON data in JavaScript?**  
+    **A:** Use `JSON.parse()`.  
+    Example:  
+    ```javascript
+    const data = JSON.parse(jsonString);
+    ```
+
+23. **Q: How do you convert an object to JSON format?**  
+    **A:** Use `JSON.stringify()`.  
+    Example:  
+    ```javascript
+    const jsonString = JSON.stringify(object);
+    ```
+
+24. **Q: How do you handle JSON data with Fetch?**  
+    **A:** Use `.json()` on the response object.  
+    Example:  
+    ```javascript
+    fetch("url")
+      .then(response => response.json())
+      .then(data => console.log(data));
+    ```
+
+25. **Q: How is JSON different from XML?**  
+    **A:**  
+    - JSON is more lightweight and easier to parse.  
+    - XML supports attributes and hierarchical data better.
+
+---
+
+### **Cross-Origin and Security**
+26. **Q: What is CORS?**  
+    **A:** CORS (Cross-Origin Resource Sharing) is a mechanism that allows or restricts resources on a web server depending on the origin of the request.
+
+27. **Q: What causes a CORS error?**  
+    **A:** A CORS error occurs when the server does not allow requests from a different origin.
+
+28. **Q: How do you solve CORS issues?**  
+    **A:** Ensure the server includes the appropriate headers (e.g., `Access-Control-Allow-Origin`) in the response.
+
+29. **Q: What are common security risks with AJAX?**  
+    **A:**  
+    - Cross-Site Scripting (XSS).  
+    - Cross-Site Request Forgery (CSRF).  
+    - Insecure data transmission.
+
+30. **Q: How do you secure AJAX requests?**  
+    **A:** Use HTTPS, validate inputs, and implement proper server-side validation.
+
+---
+
+### **Asynchronous Programming**
+31. **Q: What is a callback function?**  
+    **A:** A function passed as an argument to another function, executed after the operation is complete.
+
+32. **Q: What are Promises?**  
+    **A:** Promises are objects representing the eventual completion or failure of an asynchronous operation.
+
+33. **Q: What are the states of a Promise?**  
+    **A:**  
+    - **Pending**  
+    - **Fulfilled**  
+    - **Rejected**
+
+34. **Q: How do you handle Promises?**  
+    **A:** Use `.then()` for success and `.catch()` for errors.
+
+35. **Q: What is `async`/`await`?**  
+    **A:** Syntactic sugar for Promises, allowing asynchronous code to look synchronous.
+
+---
+
+### **Practical Scenarios**
+36. **Q: Write a script to fetch user data from an API and display it.**  
+    **A:**  
+    ```javascript
+    fetch("https://api.example.com/users")
+      .then(response => response.json())
+      .then(data => {
+          data.forEach(user => console.log(user.name));
+      });
+    ```
+
+37. **Q: How do you handle timeouts in AJAX?**  
+    **A:** Use `timeout` in `XMLHttpRequest` or a manual timeout with Fetch.
+
+38. **Q: What is long polling in AJAX?**  
+    **A:** A technique where the client repeatedly requests updates from the server.
+
+39. **Q: What is the difference between polling and WebSockets?**  
+    **A:** Polling involves repeated requests, while WebSockets provide real-time, two-way communication.
+
+40. **Q: How do you upload a file using AJAX?**  
+    **A:** Use `FormData` with `XMLHttpRequest` or Fetch.
+
+---
+
+### **Error Handling**
+41. **Q: What is the `status` property in `XMLHttpRequest`?**  
+    **A:** It represents the HTTP status code of the response.
+
+42. **Q: How do you check for a successful response in Fetch?**  
+    **A:** Check `response.ok`.  
+    Example:  
+    ```javascript
+    if (!response.ok) {
+        throw new Error("HTTP error");
+    }
+    ```
+
+43. **Q: How do you log AJAX errors to the console?**  
+    **A:** Use the `console.error()` method.
+
+44. **Q: How do you retry a failed AJAX request?**  
+    **A:** Use a loop or recursion to retry after a failure.
+
+45. **Q: What is the `try...catch` block used for in Fetch?**  
+    **A:** To handle synchronous errors in asynchronous code.
+
+---
+
