@@ -3295,3 +3295,118 @@ function displayBooks() {
 
 ---
 
+
+Here are additional questions related to your experiments that haven't been addressed:
+
+---
+
+### **Experiment 1 (HTML)**
+
+1. **What is the purpose of semantic tags in HTML?**
+   - Explain the benefits of semantic tags like `<header>`, `<footer>`, and `<section>` in improving code readability and accessibility.
+
+2. **How does HTML handle multimedia content?**
+   - Discuss the use of `<audio>` and `<video>` tags for embedding media.
+
+---
+
+### **Experiment 2 (CSS)**
+
+1. **What are CSS selectors, and how are they categorized?**
+   - Explain different types of selectors: universal, type, class, ID, group, descendant, and pseudo-selectors.
+
+2. **What is the difference between inline, internal, and external CSS?**
+   - Highlight when to use each type and its advantages.
+
+3. **What is the Box Model in CSS?**
+   - Describe how margin, border, padding, and content work together in the Box Model.
+
+---
+
+### **Experiment 3 (JavaScript Basics)**
+
+1. **What are JavaScript events, and how do they work?**
+   - Define events and provide examples like `onclick`, `onmouseover`, and `onload`.
+
+2. **What are closures in JavaScript?**
+   - Explain closures with an example showing how they retain access to variables in their lexical scope.
+
+3. **How does JavaScript handle asynchronous operations?**
+   - Discuss concepts like callbacks, promises, and async/await.
+
+---
+
+### **Experiment 4 (Dynamic HTML)**
+
+1. **What are the DOM and BOM in JavaScript?**
+   - Compare the Document Object Model (DOM) and Browser Object Model (BOM).
+
+2. **How do you manipulate CSS styles dynamically using JavaScript?**
+   - Demonstrate how to add, remove, or modify styles on HTML elements.
+
+3. **What is the difference between `innerHTML`, `textContent`, and `innerText`?**
+   - Explain how each property behaves and their specific use cases.
+
+---
+
+### **Experiment 5 (Window and Document Object)**
+
+1. **What are JavaScript timers?**
+   - Discuss the `setTimeout` and `setInterval` methods and their differences.
+
+2. **What is the difference between cookies, localStorage, and sessionStorage?**
+   - Explain when to use each for storing data.
+
+---
+
+### **Experiment 6 (JavaScript Events)**
+
+1. **What are event propagation, capturing, and bubbling?**
+   - Describe how events propagate through the DOM and how to control them.
+
+2. **How can you prevent the default behavior of an event?**
+   - Provide examples using `event.preventDefault()`.
+
+---
+
+### **Experiment 7 (JavaScript Objects)**
+
+1. **What is prototypal inheritance in JavaScript?**
+   - Explain how objects inherit properties and methods from their prototype.
+
+2. **What is the difference between a shallow copy and a deep copy of an object?**
+   - Discuss methods for creating copies of objects, like `Object.assign()` and structured cloning.
+
+---
+
+### **Experiment 8 (Object-Oriented JavaScript)**
+
+1. **What are getters and setters in JavaScript?**
+   - Explain how to define and use `get` and `set` methods in objects.
+
+2. **How do ES6 classes improve object-oriented programming in JavaScript?**
+   - Compare ES6 classes with traditional constructor functions.
+
+---
+
+### **Experiment 9 (Unit Converter)**
+
+1. **How do you ensure accurate floating-point calculations in JavaScript?**
+   - Discuss methods like using libraries (e.g., Big.js) or rounding techniques.
+
+2. **How can you enhance the user experience of your unit converter?**
+   - Suggest improvements like keyboard input handling, saving preferences, or adding tooltips.
+
+---
+
+### **Experiment 10 (Random Number Generator)**
+
+1. **How can you generate cryptographically secure random numbers in JavaScript?**
+   - Discuss the use of the `crypto.getRandomValues` method.
+
+2. **What are the limitations of `Math.random()` in JavaScript?**
+   - Explain its lack of cryptographic security and uniform distribution issues.
+
+---
+
+If you need detailed answers for these or other questions, let me know!
